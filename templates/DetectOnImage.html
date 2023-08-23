@@ -1,0 +1,82 @@
+{%extends 'base.html'%} {%block head%}
+<title>Object Detection</title>
+{%endblock%} {%block body%}
+<div class="topnav" id="myTopnav">
+  <a class="techwatt" href=""><h4>TECHWATT.AI</h4></a>
+  <a href="/">HOME</a>
+  <div class="dropdown">
+    <button class="dropbtn">
+      SERVICES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{url_for('youtubesummary')}}">YOUTUBE SUMMARIZER</a>
+      <a href="{{url_for('websitesummary')}}">WEBSITE SUMMARIZER</a>
+      <a href="{{url_for('detectOnImages')}}">DETECT ON IMAGE</a>
+      <a href="{{url_for('chatbot')}}">CHAT BOT</a>
+      <a href="{{url_for('barcode')}}">BARCODE SCANNER</a>
+    </div>
+  </div>
+  <a
+    href="javascript:void(0);"
+    style="font-size: 15px"
+    class="icon"
+    onclick="myFunction()"
+    >&#9776;</a
+  >
+</div>
+<hr />
+
+<div
+  style="
+    display: grid;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+  "
+>
+  Upload Image and Detect Objects.
+</div>
+<hr />
+
+<div style="display: grid; place-items: center">
+  <form action="detectonimage" method="post" enctype="multipart/form-data">
+    <input type="file" name="images" id="image" />
+    <input class="btn btn-primary" type="submit" value="Upload" />
+  </form>
+</div>
+<hr />
+
+<div
+  style="
+    display: grid;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+  "
+>
+  Detected Image Results
+</div>
+<hr />
+<div style="display: grid; place-items: center">
+  <img
+    style="
+      object-fit: contain;
+      border-color: aqua;
+      border-radius: 3px;
+      object-position: left;
+    "
+    width="600px"
+    src="{{ url_for('serve_image', filename='detected.jpg') }}"
+    alt="detected image"
+  />
+</div>
+<hr />
+
+<a style="display: grid; place-items: center" href="#"
+  ><button class="btn btn-primary" type="button">BACK TO TOP</button></a
+>
+<hr />
+{%endblock%}

@@ -1,0 +1,70 @@
+{% extends 'base.html'%} {%block head%}
+<title>Chat Bot</title>
+{%endblock%} {%block body%}
+<div class="topnav" id="myTopnav">
+  <a class="techwatt" href=""><h4>TECHWATT.AI</h4></a>
+  <a href="/">HOME</a>
+  <div class="dropdown">
+    <button class="dropbtn">
+      CHAT BOT
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{url_for('youtubesummary')}}">YOUTUBE SUMMARIZER</a>
+      <a href="{{url_for('websitesummary')}}">WEBSITE SUMMARIZER</a>
+      <a href="{{url_for('detectOnImages')}}">DETECT ON IMAGE</a>
+      <a href="{{url_for('chatbot')}}">CHAT BOT</a>
+      <a href="{{url_for('barcode')}}">BARCODE SCANNER</a>
+    </div>
+  </div>
+  <a
+    href="javascript:void(0);"
+    style="font-size: 15px"
+    class="icon"
+    onclick="myFunction()"
+    >&#9776;</a
+  >
+</div>
+<hr />
+<!-- dddddddddddddddddddddddddddddddddddddd -->
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-body" id="chat-container">
+              <div class="alert alert-primary" role="alert">
+                  <div style="display: grid;place-items: center;">
+                    <p style="font-size: 20px;font-family: Arial, Helvetica, sans-serif; font-weight: bolder;">{{usertext}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+          <div class="card">
+              <div class="card-body" id="chat-container">
+                  <div class="alert alert-primary" role="alert">
+                      <div style="display: grid;place-items: center;">
+                        <p style="font-size: 18px;font-family: Arial, Helvetica, sans-serif;">{{response}}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <form action="chatbot" method="post">
+              <div class="input-group mt-3">
+                  <input type="text" class="form-control" type="text"
+                  name="botmessages"
+                  placeholder="Enter a message"
+                  required placeholder="Type your message here...">
+                  <div class="input-group-append">
+                      <button style="margin-left: 5px;" class="btn btn-primary" type="submit">Send</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+<hr>
+<a style="display: grid; place-items: center" href="#"
+  ><button class="btn btn-primary" type="button">BACK TO TOP</button></a
+>
+<hr />
+{%endblock%}

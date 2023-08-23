@@ -1,0 +1,144 @@
+{% extends 'base.html'%} {%block head%}
+<title>WebsiteSummary</title>
+{%endblock%} {%block body%}
+<div class="topnav" id="myTopnav">
+  <a class="techwatt" href=""><h4>TECHWATT.AI</h4></a>
+  <a href="/">HOME</a>
+  <div class="dropdown">
+    <button class="dropbtn">
+      SERVICES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{url_for('youtubesummary')}}">YOUTUBE SUMMARIZER</a>
+      <a href="{{url_for('websitesummary')}}">WEBSITE SUMMARIZER</a>
+      <a href="{{url_for('detectOnImages')}}">DETECT ON IMAGE</a>
+      <a href="{{url_for('chatbot')}}">CHAT BOT</a>
+      <a href="{{url_for('barcode')}}">BARCODE SCANNER</a>
+    </div>
+  </div>
+  <a
+    href="javascript:void(0);"
+    style="font-size: 15px"
+    class="icon"
+    onclick="myFunction()"
+    >&#9776;</a
+  >
+</div>
+<hr />
+
+<form action="websitesummary" method="post">
+  <input
+    name="websitelink"
+    class="form-control me-2"
+    type="search"
+    placeholder="Insert a Website link here"
+    required
+  />
+  <hr />
+  <button
+    style="margin-left: 45%; width: 100px"
+    class="btn btn-outline-success"
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+<hr />
+
+<div
+  style="
+    display: grid;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+  "
+>
+  Summary
+</div>
+<hr />
+<div
+  style="
+    overflow-wrap: break-word;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    text-align: justify;
+  "
+>
+  <p
+    style="
+      margin-bottom: 10px;
+      text-indent: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: 20px;
+    "
+  >
+    {{summary}}
+  </p>
+</div>
+<hr />
+
+<div
+  style="
+    display: grid;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+  "
+>
+  Main Points
+</div>
+<hr />
+<div
+  style="
+    overflow-wrap: break-word;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    text-align: justify;
+  "
+>
+  <p
+    style="
+      margin-bottom: 10px;
+      text-indent: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: 20px;
+    "
+  >
+    {{mainpoints}}
+  </p>
+</div>
+<hr />
+
+<div
+  style="
+    display: grid;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+  "
+>
+  Audio Version
+</div>
+<hr />
+<div style="display: grid; place-items: center">
+  <audio controls>
+    <source
+      src="{{ url_for('serve_audio', filename='website.mp3') }}"
+      type="audio/mpeg"
+    />
+    Your browser does not support the audio element.
+  </audio>
+</div>
+<hr />
+
+<a style="display: grid; place-items: center" href="#"
+  ><button class="btn btn-primary" type="button">BACK TO TOP</button></a
+>
+<hr />
+{%endblock%}

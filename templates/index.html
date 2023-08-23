@@ -1,0 +1,420 @@
+{%extends 'base.html'%}
+
+
+{%block head%}
+<title>Homepage</title>
+{%endblock%}
+
+
+{%block body%}
+  <div class="topnav" id="myTopnav">
+    <a class="techwatt" href=""><h4>TECHWATT.AI</h4></a>
+    <a href="" class="active">HOME</a>
+    <a href="#about">ABOUT US</a>
+    <a href="http://felixsam10.pythonanywhere.com/blogs" target="_blank">BLOG</a>
+   
+    <a href="#messageus">MESSAGE US</a>
+    <a href="#">MODELS</a>
+    <div class="dropdown">
+      <button class="dropbtn">SERVICES 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{{url_for('youtubesummary')}}">YOUTUBE SUMMARIZER</a>
+        <a href="{{url_for('websitesummary')}}">WEBSITE SUMMARIZER</a>
+        <a href="{{url_for('detectOnImages')}}">DETECT ON IMAGE</a>
+        <a href="{{url_for('chatbot')}}">CHAT BOT</a>
+        <a href="{{url_for('barcode')}}">BARCODE SCANNER</a>
+      </div>
+    </div> 
+    
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  
+  
+
+
+  <!-- upload page -->
+<section>
+  <div class="text">
+       <h2>Automating Task with AI Efficiency</h2>
+    
+      <h4>Used by over 250,000 people to automate their daily tasks.</h3>
+  </div>
+  
+  <div class="image-container">
+    <img src="{{imgdivs}}" alt="image">
+  </div>
+</section>
+
+
+<!-- .................................................... -->
+<main style=" background: linear-gradient(90deg,rgb(155, 140, 140), #4301df, rgb(219, 166, 67));" class="container py-5">
+    <div class="row" data-masonry='{"percentPosition": true }'>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="{{autoai}}" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Why should you automate task?</h5>
+            <p class="blockquote">The good thing about aumtomation is that it saves you ton of time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card p-3">
+          <figure class="p-3 mb-0">
+            <blockquote class="blockquote">
+              <p>Computer vision is the bridge between the digital and physical worlds, enabling machines to perceive and understand visual information.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+              Someone famous in <cite title="Source Title">Gary Bradski</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+            <img src="{{vision}}" alt="">
+  
+          <div class="card-body">
+            <h5 class="card-title">Deep Learning</h5>
+            <p class="blockquote">Deep learning is a powerful branch of AI that uses multi-layered neural networks to learn and make predictions. It has revolutionized fields like computer vision and natural language processing, allowing machines to learn complex patterns from raw data and achieve remarkable results..</p>
+            <p Time: class="card-text"><small class="text-muted">TechWatt.AI</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card text-bg-primary text-center p-3">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p>Artificial intelligence is the new electricity.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-white">
+              Someone famous in <cite title="Source Title">- Andrew Ng</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">AI</h5>
+            <p class="blockquote">AI is the science of making machines smart, while machine learning is the practice of teaching them to be smart.</p>
+            <p Time: class="card-text"><small class="text-muted">TechWatt.AI</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+            <img src="{{vision1}}" alt="">
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card p-3 text-end">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p>The most important skill a programmer can learn is how to learn new things.  </p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+              Someone famous in <cite title="Source Title">Eric S. Raymond.</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Elon Musk</h5>
+            <p class="blockquote">Artificial intelligence is humanity's biggest existential threat.</p>
+            <p Time class="card-text"><small class="text-muted">TechWatt.AI</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
+
+<!-- ........................................................................ -->
+
+<div  class="container px-4 py-5" id="custom-cards">
+  <h2 style="display: grid;place-items: center;" class="pb-2 border-bottom">Tech Mindset</h2>
+
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('static/images/nice3.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Just Code It now</h3>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="{{logo}}" alt="image" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+              <small>TechWatt.AI</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+              <small>GH</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('static/images/ball.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Change the world with your skill</h3>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="{{logo}}" alt="image" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+              <small>TechWatt.AI</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+              <small>GH</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>  
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('static/images/code.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Create the world you wish you had</h3>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img src="{{logo}}" alt="image" width="32" height="32" class="rounded-circle border border-white">
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+              <small>TechWatt.AI</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+              <small>GH</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ............................................................................. -->
+<div style=" background: linear-gradient(90deg,rgb(155, 140, 140), #b2f494, rgb(226, 189, 120));" class="container py-5"  class="container px-4 py-5" id="hanging-icons">
+  <h2 style="display: grid;place-items: center;" class="pb-2 border-bottom">Reasons to Automate Task</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2 text-body-emphasis">Time-saving</h3>
+        <p> Automation allows users to complete repetitive tasks quickly and efficiently, freeing up their time for more important and meaningful activities.</p>
+        
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2 text-body-emphasis">Increased productivity</h3>
+        <p>By automating daily tasks, individuals can accomplish more in less time, leading to increased productivity and output.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
+      </div>
+      <div>
+        <h3 class="fs-2 text-body-emphasis">Accuracy and precision</h3>
+        <p>Automation reduces the chances of human error, ensuring consistent and accurate results in performing tasks.</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ......................................................................... -->
+<div id ="resources" style=" background: linear-gradient(90deg,rgb(210, 199, 199), #658059, rgb(182, 171, 151));" class="container px-4 py-5" id="featured-3">
+  <h2 style="display: grid;place-items: center;" class="pb-2 border-bottom">Visit For Some Free Resources</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">YOUTUBE</h3>
+      <p>We have tons of informative tutorial on our Youtube channel on how to build AI projects.</p>
+      <a style="display: grid;place-items: center;"  href="https://www.youtube.com/@tech_watt" target="_blank" class="icon-link">
+        <button class="btn btn-primary" type="button">Youtube Link</button>
+      </a>
+    </div>
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">TIKTOK</h3>
+      <p>If you're fun of short but informative videos, then follow us on Tiktok for educative short tutorials.</p>
+      <a style="display: grid;place-items: center;"  href="https://www.tiktok.com/@tech_watt?_t=8dlYFLZo690&_r=1" target="_blank" class="icon-link">
+      <button class="btn btn-primary" type="button">Tiktok Link</button>
+      </a>
+    </div>
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">FACEBOOK</h3>
+      <p>Join our Facebook page to stay updated with the latest news, events, and exclusive content.</p>
+      <a style="display: grid;place-items: center;"  href="https://www.facebook.com/CodiTechs/" target="_blank" class="icon-link">
+        <button class="btn btn-primary" type="button">Facebook Link</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr>
+<!-- ................................................................... -->
+
+
+<div id="about" class="about-section">
+  <h2 style="display: grid;place-items: center;" class="pb-2 border-bottom">ABOUT TECHWATT.AI</h2>
+  <p >At TechWatt.AI, we're passionate about automation. Our mission is to empower individuals and businesses with cutting-edge websites that automate everyday tasks. Say goodbye to manual processes and hello to streamlined efficiency.
+    With our intuitive platforms, you can automate data entry, streamline customer support, and optimize repetitive tasks effortlessly. We harness the power of AI and advanced technologies to simplify complex workflows, saving you time and resources.
+    Join us on the journey towards increased productivity and innovation. Experience the transformative impact of automation with TechWatt.AI. Let's revolutionize the way you work and unlock your true potential.</p>
+</div>
+<hr>
+<h2 style="text-align:center">Our Team</h2>
+<hr>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{{felix}}" alt="image" style="width: 100;">
+      <div class="container">
+        <h2>Felix Sam</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Felix Sam is the CEO and AI Engineer @ TechWatt.AI .</p>
+        <button class="button"><a class="mailword" href="mailto:felixsam922@gmail.com">Contact</a></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="{{beatrice}}" alt="image" style="width:100%">
+      <div class="container">
+        <h2>Beatrice</h2>
+        <p class="title">Designer</p>
+        <p>Beatrice is the Designer @ TechWatt.AI.</p>
+        <button class="button"><a class="mailword" href="mailto:felixsam922@gmail.com">Contact</a></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/{{felix}}" alt="image" style="width:100%">
+      <div class="container">
+        <h2>Don Oasis</h2>
+        <p class="title">Developer</p>
+        <p>Don Oasis is a Developer @ TechWatt.AI.</p>
+        <button class="button"><a class="mailword" href="mailto:felixsam922@gmail.com">Contact</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ....................................................... -->
+<hr>
+<div id="messageus" class="container my-5">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      <h1 style="display: grid;place-items: center;" class="display-4 fw-bold lh-1 text-body-emphasis">To Our Customers</h1>
+      <hr>
+      <p class="lead">At TechWatt.AI we believe we cant build without you.Your concerns are our priority.</p>
+      <hr>
+      <form action="message" method="post">
+        <label style="display: grid;place-items: center;font-weight: bold; font-family: 'Roboto';font-size: large;" >Message Us</label>
+        <hr>
+        <div class="form-floating">
+          <input type="text" class="form-control" name="messageus" required>
+          <label for="floatingInput">TechWatt is my automation barstop</label>
+        </div>
+      <hr>
+        <div  class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <button  type="submit" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Send message</button>
+      </div>
+    </form>
+    </div>
+    <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <img class="rounded-lg-3" src="{{nice}}" alt="" width="720">
+    </div>
+  </div>
+</div>
+<!-- ............................................................................ -->
+
+<hr>
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+  <div class="py-5">
+    <h1 class="display-5 fw-bold text-white">Follow US</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 mb-4">Follow and support us on all social platforms below</p>
+      
+      <a href="https://www.youtube.com/@tech_watt" target="_blank">
+      <button class="btn bg-danger bg-gradient" type="button">
+        <span><i class="fa-brands fa-youtube text-white"></i></span> <span class="text-white">Youtube</span>
+      </button>
+    </a>
+
+    <a href="https://twitter.com/felixsa41013626?s=21&t=m0BDkue5ZnFbsOhDG5Tptg" target="_blank">
+      <button class="btn bg-info bg-gradient" type="button">
+        <span><i class="fa-brands fa-twitter text-white"></i></span><span class="text-info text-white">Twitter</span>
+      </button>
+    </a>
+    
+    <a href="https://www.tiktok.com/@tech_watt?_t=8dlYFLZo690&_r=1" target="_blank">
+      <button class="btn bg-dark bg-gradient"  type="button">
+        <span><i class="fa-brands fa-tiktok text-white"></i></span><span class="text-info text-white">Tiktok</span>
+      </button>
+    </a>
+
+    <a href="https://www.facebook.com/CodiTechs/" target="_blank">
+      <button class="btn bg-primary bg-gradient" type="button">
+        <span> <i class="fa-brands fa-facebook text-white"></i></span> <span class="text-white">Facebook</span>
+      </button>
+    </a>
+
+    <a href="https://instagram.com/tech_watt?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+      <button class="btn bg-danger bg-gradient" type="button">
+        <span> <i class="fa-brands fa-instagram text-white"></i> </span> <span class="text-white">instagram</span>
+      </button>
+    </a>
+
+    <a href="" target="_blank">
+      <button class="btn bg-success bg-gradient" type="button">
+        <span> <i class="fa-brands fa-whatsapp text-white"></i> </span> <span class="text-white">Whatsapp</span>
+      </button>
+    </a>
+      
+    <a href="https://github.com/Tech-Watt" target="_blank">
+     <button class="btn bg-dark bg-gradient" type="button">
+        <span><i class="fa-brands fa-github text-white"></i></span> <span class="text-white">GitHub</span>
+      </button>
+    </a>
+      <hr>
+      
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href=""><button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">SIGN UP</button></a>
+        <a href=""><button type="button" class="btn btn-outline-light btn-lg px-4">LOGIN</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- .............................................................................. -->
+
+<hr>
+<a style="display: grid;place-items: center;" href="#"><button class="btn btn-primary" type="button">BACK TO TOP</button></a>
+<hr>
+{%endblock%}
